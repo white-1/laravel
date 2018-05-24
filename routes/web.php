@@ -11,6 +11,10 @@
 |
 */
 
+Route::get( '/_debugbar/assets/stylesheets', '\Barryvdh\Debugbar\Controllers\AssetController@css' );
+Route::get( '/_debugbar/assets/javascript', '\Barryvdh\Debugbar\Controllers\AssetController@js' );
+
 Route::get('/', function () {
-    return view('welcome');
+    return 'Hello laravel.';
+    //return view('welcome');
 });
