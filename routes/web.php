@@ -11,10 +11,16 @@
 |
 */
 
+Route::get('/', function () {
+    // \Log::debug(env('APP_ENV'));
+    // \Log::debug(config('APP_ENV'));
+    var_dump(env('APP_ENV'));  // production
+    var_dump(config('APP_ENV'));  // NULL
+
+    return 'Hello laravel!';
+    // return view('welcome');
+});
+
+// For heroku
 Route::get( '/_debugbar/assets/stylesheets', '\Barryvdh\Debugbar\Controllers\AssetController@css' );
 Route::get( '/_debugbar/assets/javascript', '\Barryvdh\Debugbar\Controllers\AssetController@js' );
-
-Route::get('/', function () {
-    return 'Hello laravel.';
-    //return view('welcome');
-});
