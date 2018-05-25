@@ -12,15 +12,14 @@
 */
 
 Route::get('/', function () {
-    // \Log::debug(env('APP_ENV'));
-    // \Log::debug(config('APP_ENV'));
-    var_dump(env('APP_ENV'));  // production
-    var_dump(config('APP_ENV'));  // NULL
-
-    return 'Hello laravel!';
-    // return view('welcome');
+    $arr = ['a' => 'A', 'b' => 'B'];
+    return view('welcome');
 });
 
 // For heroku
 Route::get( '/_debugbar/assets/stylesheets', '\Barryvdh\Debugbar\Controllers\AssetController@css' );
 Route::get( '/_debugbar/assets/javascript', '\Barryvdh\Debugbar\Controllers\AssetController@js' );
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

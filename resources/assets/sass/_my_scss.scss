@@ -1,0 +1,29 @@
+/** scss記法 **/
+
+/* scssの変数 */
+$red: #FF0000;
+$blue: #0000FF;
+
+/* scssの関数 */
+@mixin my_button($background, $color){
+  background: $background;
+  color: $color;
+}
+
+.profile{
+  &__name{ /* .profile__name */
+    color: $red;
+  }
+  .age{ /* .profile .age */
+    color: $blue;
+  }
+}
+
+.greeting{
+  &__hello{ /* .greeting__hello */
+    @include my_button($red, $blue); /* background: #FF0000; color: #0000FF; */
+  }
+  &__hi{ /* .greeting__hi */
+    @include my_button(#0000FF, #FFFF00); /* background: #0000FF; color: #FFFF00; */
+  }
+}
